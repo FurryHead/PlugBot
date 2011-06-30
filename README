@@ -1,0 +1,26 @@
+PlugBot is compiled with the following:
+
+    GCC version 4.4.3
+    Lua 5.1.4 - http://lua.org/
+    Sockets 2.3.9.5 - http://www.alhem.net/Sockets/index.html
+    Linux! :)
+
+I will also be hosting copies of the specific versions of Lua and Sockets
+on my homepage for PlugBot once it's created, in the case that either
+these specific versions become unavailable, or the project's homepage disappears.
+
+INSTALLING / COMPILING
+As I have neither a Mac or Windows computer, this has been tested only on linux.
+If you would like to help test / develop PlugBot, and you have a Mac and/or Windows
+computer(s), I would greatly appreciate the help.
+
+If you're not running linux, you'll have to edit the makefile and adjust these commands accordingly.
+
+Assuming you've installed Sockets already, "Sockets-config" should be in your path (accessible by make)
+
+cd PlugBot
+make
+./ircbot --makeconf
+./ircbot
+
+And you're done! :) Have fun!

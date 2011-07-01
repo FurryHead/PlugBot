@@ -139,7 +139,9 @@ void set(ConfigParser cp, string section, string option, string text, string _de
             _default = cp.get(section, option);
     
     string value = my_raw(text, _default);
+    try{
     cp.set(section,option,value);
+}catch(SyntaxError& e){cout<<e.what()<<endl;exit(1);}
 }
 
 void makeconf() {
@@ -156,6 +158,8 @@ void makeconf() {
             if (str::lower(overwrite) == "no" || str::lower(overwrite) == "n")
                 continue; //go back to top of "while (getting_servers)"
             //else continue out of try/except
+        } else {
+            cp.add_section(currentNetwork);
         }
             
         set(cp,currentNetwork,"host","The IRC network host to connect to");

@@ -24,6 +24,7 @@
 #include "irc_base.hxx"
 #include "string.hxx"
 #include <string>
+#include <iostream>
 using namespace std;
 
 IRC_Base::IRC_Base(ISocketHandler& h) : TcpSocket(h) {

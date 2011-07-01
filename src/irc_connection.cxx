@@ -40,6 +40,7 @@ IRC_Connection::IRC_Connection(ISocketHandler& h, std::map<std::string,std::stri
 
 void IRC_Connection::OnConnect() {
     IRC_Base::OnConnect();
+    config["ident"] = str::trim(config["ident"], " ") == "" ? config["nick"] : config["ident"];
     sendLine("USER "+config["ident"]+" * * *");
     sendLine("NICK "+config["nick"]);
     plugins->fire("connect", 0);

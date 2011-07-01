@@ -164,14 +164,15 @@ void makeconf() {
             
         set(cp,currentNetwork,"host","The IRC network host to connect to");
         set(cp,currentNetwork,"channels","Channels to automatically join (comma-separated, no spaces)");
-        set(cp,currentNetwork,"nickname","My nickname");
-        set(cp,currentNetwork,"ident","My ident");
+        string nick = my_raw("My nickname");
+        cp.set(currentNetwork, "nick", nick);
+        set(cp,currentNetwork,"ident","ident",nick);
         set(cp,currentNetwork,"owner_nick","Your username (use the auth plugin to set a password)");
         set(cp,currentNetwork,"ns_name","NickServ username (if there is none, press ENTER)");
         set(cp,currentNetwork,"ns_pwd","NickServ password (if there is none, press ENTER)");
         set(cp,currentNetwork,"port","Port", "6667");
         set(cp,currentNetwork,"use_ssl","Use ssl (yes/no)", "no");
-        set(cp,currentNetwork,"comchar","My command char", "-");
+        set(cp,currentNetwork,"comchar","My command char", "!");
         set(cp,currentNetwork,"plugins","Plugins to load on startup (comma-separated, no spaces)", "auth,logger");
             
         string another_server = str::lower(my_raw("All done with "+currentNetwork+". Add another server? (yes/no)", "no"));

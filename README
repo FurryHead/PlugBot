@@ -20,7 +20,7 @@ Assuming you've installed Sockets already, "Sockets-config" should be in your pa
 
 cd PlugBot
 make
-./ircbot --makeconf
-./ircbot
+./plugbot --makeconf
+./plugbot
 
 And you're done! :) Have fun!

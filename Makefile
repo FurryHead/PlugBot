@@ -7,7 +7,7 @@ OBJS=$(patsubst src/%.cxx,obj/%.o,$(SRCS))
 CFLAGS=`Sockets-config`
 LFLAGS=-lSockets -lssl -lpthread -llua
 
-OUT=ircbot
+OUT=plugbot
 
 all: $(OUT)
 	echo "Finished compiling"

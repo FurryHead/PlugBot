@@ -42,6 +42,18 @@ local function add_to_backlog(channel, msg)
     end
 end
 
+function handle_connect()
+    log("Connecting...")
+end
+
+function handle_connected()
+    log("Connected!")
+end
+
+function handle_disconnect()
+    log("Disconnected.")
+end
+
 function handle_message(channel, user, message) 
     local msg = string.format("<%s> %s: %s", channel, user[1], message)
     

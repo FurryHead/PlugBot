@@ -207,6 +207,8 @@ void IRC_Connection::process_line(vector<string> words) {
 void IRC_Connection::quit(string reason) {
     sendLine("QUIT "+reason);
     SetCloseAndDelete();
+    OnDisconnect();
+    plugins->unload_all_plugins();
 }
 
 void IRC_Connection::join(string channel) {

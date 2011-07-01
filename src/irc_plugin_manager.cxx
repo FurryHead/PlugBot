@@ -574,7 +574,7 @@ void PluginManager::load_start_plugins() {
 }
 
 void PluginManager::unload_all_plugins() {
-    luaL_dostring(L, "p = {} for k,v in plugins do table.insert(p, #p+1, k) end for _,v in ipairs(p) do server:unload_plugin(v) end");
+    luaL_dostring(L, "function unload() for k,v in plugins do server:unload_plugin(k) break end end while #plugins > 0 do unload() end");
 }
 
 //static
